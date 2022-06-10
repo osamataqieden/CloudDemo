@@ -1,0 +1,38 @@
+﻿<form action="Generate" method="post">
+
+    @Html.DropDownList("externalId", (IEnumerable<SelectListItem>)ViewBag.Users, null, new { @class = "form-control"})
+    <br />
+    <br />
+    <select class="form-select" name="type" aria-label="Default select example">
+		<option value="MEDICAL">MEDICAL</option>
+		<option value="HISTORY">HISTORY</option>
+		<option value="BIOLOGY">BIOLOGY</option>
+		<option value="MATH">MATH</option>
+		<option value="CS">CS</option>
+		<option value="SOFTWARE_ENGINEER">SOFTWARE_ENGINEER</option>
+		<option value="CHEMISTRY">CHEMISTRY</option>
+		<option value="GEOLOGY">GEOLOGY</option>
+		<option value="ARABIC">ARABIC</option>
+		<option value="ENGLISH">ENGLISH</option>
+		<option value="PHYSICS">PHYSICS</option>
+    </select>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Exam Name</span>
+        </div>
+        <input type="text" class="form-control" name="title" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+        </div>
+        <input type="text" class="form-control" name="description" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Number of Questions</span>
+        </div>
+        <input type="text" class="form-control" name="numberOfQuestions" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>

@@ -1,0 +1,52 @@
+﻿
+@model IEnumerable<CloudDemo.Models.ExamModel>
+<a class="btn btn-primary" style="float: right;margin-bottom: 20px;" href="@Url.Action("Generate")">
+    Generate Random Exam
+</a>
+<table id="tblEmployee" data-export="enable" class="dt-column-search_test table table-responsive-sm table-responsive-md table-responsive-lg  table-responsive-xl table-responsive-xxl table-striped table-bordered table-sm table-hover">
+    <thead>
+        <tr>
+            <th data-search="enabled" data-export="enable">Exam</th>
+            <th data-search="enabled" data-export="enable">Exam Type</th>
+            <th data-search="enabled" data-export="enable">Examine ID</th>
+            <th data-search="enabled" data-export="enable">Creation Date</th>
+            <th data-search="enabled" data-export="enable">Exam Description</th>
+            <th data-search="enabled" data-export="enable">Show Questions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.title
+                </td>
+                <td>
+                    @item.type
+                </td>
+                <td>
+                    @item.examineId
+                </td>
+                <td>
+                    @item.creationDate
+                </td>
+                <td>
+                    @item.description
+                </td>
+                <td>
+                    <a asp-action="Solve" asp-route-examid=@item.id>
+                        Solve
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#tblExams').DataTable();
+        });
+    </script>
+}
